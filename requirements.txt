@@ -1,0 +1,7 @@
+passlib
+flask
+pymongo
+bs4
+requests
+flask_moment
+functools

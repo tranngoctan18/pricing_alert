@@ -1,0 +1,18 @@
+{% extends 'base.jinja2' %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>Stores page {{ store.name }}</h1>
+    </div>
+    <p> All URLs in this store should start with <strong> {{ store.url_prefix }}</strong></p>
+    {%  if session['email'] in config.ADMIN %}
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <a href="{{ url_for('stores.edit_store', store_id=store._id) }}" class="btn btn-warning" role="button">
+                Edit </a>
+            <a href="{{ url_for('stores.delete_store', store_id=store._id) }}" class="btn btn-danger" role="button">
+                Delete Store </a>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

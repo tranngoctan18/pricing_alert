@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ApexVcsIndex">
+    <index-move-record>
+      <option name="firstPath" value="/src/templates/alert/edit_alert.jinja2" />
+      <option name="path" value="/src/templates/alerts/edit_alert.jinja2" />
+    </index-move-record>
+    <index-move-record>
+      <option name="firstPath" value="/src/templates/alert/create_alert.jinja2" />
+      <option name="path" value="/src/templates/alerts/create_alert.jinja2" />
+    </index-move-record>
+    <index-move-record>
+      <option name="firstPath" value="/src/templates/alert/alerts.jinja2" />
+      <option name="path" value="/src/templates/alerts/alerts.jinja2" />
+    </index-move-record>
+  </component>
+</project>

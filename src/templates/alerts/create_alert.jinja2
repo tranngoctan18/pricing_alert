@@ -1,0 +1,31 @@
+{% extends "base.jinja2" %}
+{% block content %}
+
+    <div class="page-header">
+        <h1> Create alert
+            <small> to get notifications</small>
+        </h1>
+    </div>
+
+    <div class="form-size">
+        <form method="post" action="{{ url_for('alerts.create_alert') }}">
+            <div class="form-group">
+                <label for="item_name">Item's name</label>
+                <input type="text" class="form-control" id="item_name" name="item_name" placeholder="Item">
+            </div>
+            <div class="form-group">
+                <label for="item_url">Item's URL</label>
+                <input type="url" class="form-control" id="item_url" name="item_url" placeholder="URL">
+            </div>
+            <div class="form-group">
+                <label for="price_limit">Price limit</label>
+                <input type="number" class="form-control" id="price_limit" name="price_limit" placeholder="362214"
+                       aria-describedby="priceLimitBlock">
+                <p id="priceLimitBlock" class="help-block"> We'll send you an email when price limit reaches or go under
+                    this. </p>
+            </div>
+            <button type="submit" class="btn btn-success">Create</button>
+        </form>
+    </div>
+
+{% endblock %}
