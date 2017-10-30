@@ -3,6 +3,7 @@ from flask import Blueprint, render_template, request, session, redirect, url_fo
 from src.models.alerts.alert import Alert
 from src.models.items.item import Item
 import src.models.users.decorators as user_decorators
+import src.models.alerts.errors as AlertErrors
 
 alert_blueprint = Blueprint('alerts', __name__)
 
@@ -19,8 +20,12 @@ def create_alert():
         item.save_to_db()
 
         alert = Alert(session['email'], price_limit, item._id)
-        alert.load_item_price()
-        flash("Dang ky alert thanh cong")
+        try:
+            alert.load_item_price()
+            flash("Dang ky alert thanh cong")
+        except AlertErrors.AlertError as e:
+            return e.message
+            flash("loi roi ma oi ")
 
         return redirect(url_for('users.user_alerts'))
 
