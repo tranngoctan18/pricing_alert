@@ -24,8 +24,9 @@ def create_alert():
             alert.load_item_price()
             flash("Dang ky alert thanh cong")
         except AlertErrors.AlertError as e:
-            return e.message
             flash("loi roi ma oi ")
+            return e.message
+
 
         return redirect(url_for('users.user_alerts'))
 
